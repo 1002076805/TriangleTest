@@ -27,11 +27,19 @@ public class Function {
         double length2 = Math.sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
         double length3 = Math.sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
         double length = length1+length2+length3;
-        ArrayList<Double> arryList = new ArrayList<Double>();
-        arryList.add(length1);
-        arryList.add(length2);
-        arryList.add(length3);
+
+        double halfPerimeter2 = length/2;
+        double arean1 = halfPerimeter2-length1;
+        double arean2 = halfPerimeter2-length2;
+        double arean3 = halfPerimeter2-length3;
+        double arean = Math.sqrt(halfPerimeter2 * arean1 * arean2 * arean3);
+
+        length = Double.parseDouble(String.format("%.2f", length ));
+        arean = Double.parseDouble(String.format("%.2f", arean ));
+
+        ArrayList<Double> arryList = new ArrayList<>();
         arryList.add(length);
+        arryList.add(arean);
         return  arryList;
     }
 }
